@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Calculadora de Antecipação de Produtos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Sobre a aplicação
 
-## Available Scripts
+Essa aplicação tem o intuito de calcular a simulação de uma antecipação de produto, levando em consideração o valor (no mínimo R$ 1000), a quantidade de parcelas e a porcentagem MDR. Por padrão irá calcular nos períodos de 1, 15, 30 e 90 dias, mas você pode escolher a quantidade de dias. Para trazer os resultados foi utilizado uma API de terceiros.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 2. Passo a passo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para testar a aplicação você terá que seguir os seguintes passos:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Fazer o clone do repositório;
+2. Na pasta raiz do projeto rodar o seguinte comando no terminal para instalar as dependências:
 
-### `npm test`
+   ```bash
+   yarn
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Após instalá-las basta rodar o seguinte comando para startar a aplicação:
 
-### `npm run build`
+   ```bash
+   yarn start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. Tecnologias e Bibliotecas:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- TypeScript;
+- ReactJs;
+- ContextAPI;
+- Axios;
+- React Hook Form;
+- Yup;
+- Styled Components.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Desenvolvido Por Gisela Mariano ;D
