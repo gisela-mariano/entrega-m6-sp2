@@ -21,8 +21,6 @@ const Form = () => {
   const { setIsLoading } = useContext(IsLoadingContext);
   const { setIsRequested } = useContext(IsRequestedContext);
 
-  // const [dataRequest, setDataRequest] = useState({});
-
   const {
     register,
     handleSubmit,
@@ -37,35 +35,6 @@ const Form = () => {
 
     const { amount, installments, mdr, days } = data;
 
-    // setDataRequest({
-    //   amount: amount,
-    //   installments: installments,
-    //   mdr: mdr,
-    // });
-
-    // console.log(dataRequest);
-
-    // if (days) {
-    //   const splitedDays = data.days.split(',');
-
-    //   const lastValue = splitedDays[splitedDays.length - 1];
-
-    //   if (lastValue === '') splitedDays.pop();
-
-    //   setDataRequest({
-    //     amount,
-    //     installments,
-    //     mdr,
-    //     days: splitedDays,
-    //   });
-    // }
-
-    let dataRequest: IDataRequest = {
-      amount,
-      installments,
-      mdr,
-    };
-
     if (days) {
       const splitedDays = data.days.split(',');
 
@@ -73,16 +42,20 @@ const Form = () => {
 
       if (lastValue === '') splitedDays.pop();
 
-      dataRequest = {
-        amount,
-        installments,
-        mdr,
+      const updatedDataRequest = {
+        ...data,
         days: splitedDays,
       };
-    }
 
-    apiSimulateDelay
-      .post('', JSON.stringify(dataRequest))
+      apiAccess(updatedDataRequest);
+    } else {
+      apiAccess({ amount, installments, mdr });
+    }
+  };
+
+  const apiAccess = (data: IDataRequest) => {
+    apiCreateAnticipation
+      .post('', JSON.stringify(data))
       .then((res) =>
         handleSuccessCreate({ data: { ...res.data }, status: res.status })
       )
@@ -91,7 +64,6 @@ const Form = () => {
 
   const handleSuccessCreate = (res: IResult) => {
     setAmount(res.data);
-    setStatus(res.status);
     setIsLoading(false);
   };
 

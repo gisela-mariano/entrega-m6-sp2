@@ -15,35 +15,11 @@ const Result = () => {
 
   const keys = Object.keys(amount);
 
-  // console.log(isLoading);
-  console.log(status);
-  // console.log(amount);
-
   return (
     <StyleDivResult>
       <h3>Você Receberá:</h3>
 
       <div className='cont-results'>
-        {/* {keys.length === 0 ? (
-          <span className='empty'>
-            Preencha os campos para ver o resultado.
-          </span>
-        ) : (
-          keys.map((key, index) => {
-            const day = parseInt(key);
-            const value = amount[key];
-
-            return (
-              <div className='cont-results' key={index}>
-                <span className='anticipation-value'>
-                  Em {day} {day <= 1 ? 'dia' : 'dias'}:{' '}
-                  <strong>R$ {value.toFixed(2)}</strong>{' '}
-                </span>
-              </div>
-            );
-          })
-        )} */}
-
         {isRequested === false ? (
           <span className='empty'>
             Preencha os campos para ver o resultado.
